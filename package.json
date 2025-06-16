@@ -1,0 +1,32 @@
+{
+  "name": "peepsview-backend",
+  "module": "index.ts",
+  "type": "commonjs",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "NODE_NO_WARNINGS=1 nodemon",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/morgan": "^1.9.10",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.0",
+    "axios": "^1.10.0",
+    "bun-types": "^1.2.16",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "morgan": "^1.10.0",
+    "redis": "^5.5.6"
+  }
+}
