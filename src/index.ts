@@ -4,6 +4,8 @@ import morgan from 'morgan';
 import * as dotenv from 'dotenv';
 import authRoutes from './routes/auth.routes';
 import userRoutes from './routes/user.routes';
+import postRoutes from './routes/post.routes';
+import analysisRoutes from './routes/analysis.routes';
 import { errorHandler } from './middleware/error';
 // import { requestLogger } from './middleware/common';
 
@@ -23,6 +25,8 @@ app.use(morgan('dev'));
 // Mount routes
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
+app.use('/posts', postRoutes);
+app.use('/analysis', analysisRoutes);
 
 // Error handling middleware (should be last)
 app.use(errorHandler);
