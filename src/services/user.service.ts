@@ -50,7 +50,6 @@ export class UserService {
       const { error: profileError } = await supabaseAdmin.from('users').insert({
         id: auth.user.id,
         email,
-        name,
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString(),
       });
