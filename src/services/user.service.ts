@@ -12,7 +12,7 @@ export class UserService {
     return data;
   }
 
-  async register(email: string, password: string) {
+  async register(email: string, password: string, name: string) {
     try {
       console.log('Starting user registration for:', email);
 
@@ -32,6 +32,7 @@ export class UserService {
         email,
         password,
         options: {
+          data: { name },
           emailRedirectTo: `${process.env.FRONTEND_URL}/auth/confirm`,
         },
       });
@@ -50,6 +51,7 @@ export class UserService {
       const { error: profileError } = await supabaseAdmin.from('users').insert({
         id: auth.user.id,
         email,
+        name,
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString(),
       });

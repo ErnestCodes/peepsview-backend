@@ -22,15 +22,16 @@ export class AuthController {
 
   static async register(req: Request, res: Response) {
     try {
-      const { email, password } = req.body;
+      const { email, password, name } = req.body;
 
       // Input validation
-      if (!email || !password) {
+      if (!email || !password || !name) {
         res.status(400).json({
           error: 'Email, password, and name are required',
           details: {
             email: !email ? 'Email is required' : null,
             password: !password ? 'Password is required' : null,
+            name: !name ? 'Name is required' : null,
           },
         });
         return;
@@ -53,7 +54,7 @@ export class AuthController {
 
       try {
         const userService = new UserService();
-        const data = await userService.register(email, password);
+        const data = await userService.register(email, password, name);
         res.status(201).json(data);
       } catch (error) {
         if (error instanceof Error) {
