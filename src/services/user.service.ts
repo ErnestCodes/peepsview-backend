@@ -12,7 +12,7 @@ export class UserService {
     return data;
   }
 
-  async register(email: string, password: string, name: string) {
+  async register(email: string, password: string) {
     try {
       console.log('Starting user registration for:', email);
 
@@ -32,7 +32,6 @@ export class UserService {
         email,
         password,
         options: {
-          data: { name },
           emailRedirectTo: `${process.env.FRONTEND_URL}/auth/confirm`,
         },
       });
