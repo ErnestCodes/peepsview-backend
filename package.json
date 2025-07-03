@@ -26,6 +26,8 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "express-validator": "^7.2.1",
+    "facebook-nodejs-business-sdk": "^23.0.0",
+    "google-auth-library": "^10.1.0",
     "morgan": "^1.10.0",
     "redis": "^5.5.6"
   }

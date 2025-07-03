@@ -7,6 +7,7 @@ import userRoutes from './routes/user.routes';
 import postRoutes from './routes/post.routes';
 import analysisRoutes from './routes/analysis.routes';
 import { errorHandler } from './middleware/error';
+import socialRoutes from './routes/social.routes';
 // import { requestLogger } from './middleware/common';
 
 dotenv.config();
@@ -27,6 +28,7 @@ app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
 app.use('/posts', postRoutes);
 app.use('/analysis', analysisRoutes);
+app.use('/social', socialRoutes);
 
 // Error handling middleware (should be last)
 app.use(errorHandler);
