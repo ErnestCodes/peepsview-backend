@@ -15,8 +15,7 @@ router.get(
   socialController.getOAuthUrl.bind(socialController)
 );
 
-// OAuth callback endpoint (no auth required)
-router.get(
+router.post(
   '/:platform/connect',
   validate(socialValidation.connect),
   socialController.connect.bind(socialController)
